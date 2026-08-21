@@ -1,0 +1,1426 @@
+/* ==================================================
+   GENERAL
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --green: #063d31;
+    --dark-green: #032c23;
+
+    --gold: #a97828;
+    --light-gold: #d0a45b;
+
+    --cream: #fffaf0;
+    --paper: #fbf4e7;
+
+    --black: #17221e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: #e8e0d2;
+
+    color: var(--black);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+}
+
+
+/* ==================================================
+   MAIN MAGAZINE
+================================================== */
+
+.magazine-container {
+
+    width: min(1200px, 96%);
+
+    margin: 25px auto;
+
+    padding: 10px;
+
+    background: var(--cream);
+
+    border: 1px solid #cda866;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ==================================================
+   GRID
+================================================== */
+
+.top-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        .82fr
+        1.05fr;
+
+    gap: 5px;
+}
+
+.bottom-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        .85fr
+        1.2fr;
+
+    gap: 5px;
+
+    margin-top: 5px;
+}
+
+
+/* ==================================================
+   MAGAZINE CARDS
+================================================== */
+
+.magazine-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 650px;
+
+    padding: 25px;
+
+    border: 1px solid #d2ae69;
+
+    background:
+
+        linear-gradient(
+            rgba(255, 250, 240, .95),
+            rgba(255, 250, 240, .95)
+        );
+
+}
+
+
+/* Inner decorative border */
+
+.magazine-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border:
+        1px solid
+        rgba(169, 120, 40, .55);
+
+    pointer-events: none;
+}
+
+
+.magazine-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border:
+        1px solid
+        rgba(169, 120, 40, .15);
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   HEADINGS
+================================================== */
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    color: var(--green);
+
+    letter-spacing: .5px;
+}
+
+
+h1 {
+
+    text-align: center;
+
+    font-size:
+        clamp(
+            2.2rem,
+            4vw,
+            4rem
+        );
+
+    line-height: .95;
+
+    margin-top: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+h2 {
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    margin-bottom: 5px;
+}
+
+
+h3 {
+
+    text-align: center;
+
+    font-size: 1.15rem;
+}
+
+
+/* ==================================================
+   ORNAMENT
+================================================== */
+
+.ornament {
+
+    text-align: center;
+
+    color: var(--gold);
+
+    font-size: 25px;
+
+    margin-top: 5px;
+}
+
+
+/* ==================================================
+   GOLD TITLE
+================================================== */
+
+.gold-title {
+
+    color: #a26f1c;
+
+    text-align: center;
+
+    font-size: 1.2rem;
+
+    letter-spacing: 1px;
+
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   COVER
+================================================== */
+
+.cover-text {
+
+    text-align: center;
+
+    font-size: 1.15rem;
+
+    line-height: 1.6;
+
+    margin-top: 25px;
+}
+
+
+.cover-image {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 43%;
+
+    object-fit: cover;
+}
+
+
+.cover-ribbon {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    padding: 17px;
+
+    text-align: center;
+
+    color: #f5d58b;
+
+    background:
+        rgba(
+            3,
+            44,
+            35,
+            .96
+        );
+
+    font-size: 1.15rem;
+
+    letter-spacing: .8px;
+
+    line-height: 1.4;
+}
+
+
+/* ==================================================
+   DIVIDER
+================================================== */
+
+.divider,
+.small-divider {
+
+    color: var(--gold);
+
+    text-align: center;
+
+    margin: 8px 0 15px;
+}
+
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 60px;
+
+    height: 1px;
+
+    vertical-align: middle;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            var(--gold)
+        );
+
+    margin: 0 8px;
+}
+
+
+.divider::after {
+
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            var(--gold)
+        );
+}
+
+
+/* ==================================================
+   INTRODUCTION
+================================================== */
+
+.introduction-section p {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+}
+
+
+.intro-second {
+
+    margin-top: 30px;
+}
+
+
+.intro-image {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 36%;
+
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   LEADER
+================================================== */
+
+.leader-section {
+
+    padding-right: 205px;
+}
+
+
+.leader-section h2 {
+
+    margin-right: -175px;
+}
+
+
+.leader-name {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    padding: 8px;
+
+    text-align: center;
+
+    color: #e4bb5d;
+
+    background: var(--dark-green);
+
+    border: 2px solid #bd8b2d;
+
+    letter-spacing: 1px;
+
+    font-weight: 600;
+}
+
+
+.script-title {
+
+    position: relative;
+
+    z-index: 5;
+
+    color: #1d302a;
+
+    font-family:
+        "Parisienne",
+        cursive;
+
+    font-size: 1.8rem;
+
+    text-align: center;
+
+    margin: 10px 0;
+}
+
+
+.leader-section > p {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: left;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+.leader-image {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 48%;
+
+    height: 56%;
+
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   QUOTE BOX
+================================================== */
+
+.quote-box {
+
+    position: absolute;
+
+    z-index: 8;
+
+    left: 20px;
+
+    bottom: 100px;
+
+    width: 145px;
+
+    padding: 10px;
+
+    background:
+        rgba(
+            255,
+            250,
+            240,
+            .92
+        );
+
+    border: 1px solid var(--gold);
+}
+
+
+.quote-mark {
+
+    color: var(--green);
+
+    font-family: Georgia, serif;
+
+    font-size: 4rem;
+
+    line-height: .5;
+}
+
+
+.quote-box p {
+
+    font-size: .85rem;
+
+    line-height: 1.4;
+
+    margin: 5px 0 0;
+}
+
+
+/* ==================================================
+   MEMBERS
+================================================== */
+
+.members-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 5px;
+
+    margin-top: 5px;
+}
+
+
+.member-card {
+
+    background: var(--paper);
+
+    border:
+        1px solid
+        #d2ae69;
+
+    overflow: hidden;
+}
+
+
+.member-card > img {
+
+    width: 100%;
+
+    height: 225px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.member-content {
+
+    padding:
+        8px
+        13px
+        18px;
+}
+
+
+.member-card h3 {
+
+    margin: 5px 0;
+}
+
+
+.small-divider {
+
+    margin: 3px 0 7px;
+}
+
+
+.small-divider::before,
+.small-divider::after {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 35px;
+
+    height: 1px;
+
+    vertical-align: middle;
+
+    background: var(--gold);
+
+    margin: 0 7px;
+}
+
+
+/* ==================================================
+   MEMBER NAME
+================================================== */
+
+.member-name {
+
+    display: table;
+
+    margin:
+        0 auto
+        8px;
+
+    padding:
+        6px
+        10px;
+
+    color: #e4bb5d;
+
+    background:
+        var(--dark-green);
+
+    border:
+        1px solid
+        #bd8b2d;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: .85rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   MEMBER SCRIPT
+================================================== */
+
+.member-script {
+
+    font-family:
+        "Parisienne",
+        cursive;
+
+    color: #172d26;
+
+    font-size: 1.4rem;
+
+    text-align: center;
+
+    line-height: 1.2;
+
+    margin: 10px 0 12px;
+}
+
+
+/* ==================================================
+   MEMBER TEXT
+================================================== */
+
+.member-card p {
+
+    font-size: .84rem;
+
+    line-height: 1.5;
+
+    text-align: left;
+
+    margin: 0;
+}
+
+
+/* ==================================================
+   BOTTOM PHOTO
+================================================== */
+
+.bottom-photo {
+
+    min-height: 360px;
+
+    padding: 0;
+}
+
+
+.bottom-photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   JOURNEY
+================================================== */
+
+.journey-section {
+
+    min-height: 360px;
+
+    padding:
+        25px
+        20px
+        0;
+}
+
+
+.journey-section p {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    font-size: 1rem;
+
+    line-height: 1.5;
+}
+
+
+.journey-title {
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.journey-section img {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 42%;
+
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   CLOSING
+================================================== */
+
+.closing-section {
+
+    min-height: 360px;
+
+    padding-bottom: 0;
+}
+
+
+.closing-quote {
+
+    position: relative;
+
+    z-index: 8;
+
+    width: 58%;
+
+    margin:
+        28px
+        auto
+        0;
+
+    padding:
+        23px
+        15px;
+
+    background:
+        rgba(
+            255,
+            250,
+            240,
+            .90
+        );
+
+    border:
+        1px solid
+        var(--gold);
+
+    text-align: center;
+}
+
+
+.closing-quote p {
+
+    font-size: .95rem;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+.heart {
+
+    color: var(--gold);
+
+    font-size: 2rem;
+
+    margin-top: 5px;
+}
+
+
+.closing-section > img {
+
+    position: absolute;
+
+    z-index: 1;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 57%;
+
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.magazine-footer {
+
+    margin-top: 5px;
+
+    background:
+        var(--dark-green);
+
+    color: #efd18c;
+}
+
+
+.footer-items {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    padding: 10px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: .72rem;
+
+    font-weight: 600;
+}
+
+
+.footer-items div {
+
+    padding:
+        0
+        10px;
+
+    border-right:
+        1px solid
+        #b98b3a;
+}
+
+
+.footer-items div:last-child {
+
+    border-right: none;
+}
+
+
+.footer-items i {
+
+    margin-right: 5px;
+}
+
+
+.designer {
+
+    text-align: center;
+
+    padding: 7px;
+
+    color: #b38338;
+
+    background:
+        var(--cream);
+
+    border-top:
+        1px solid
+        #d6b678;
+
+    font-family:
+        "Parisienne",
+        cursive;
+
+    font-size: 1.3rem;
+}
+
+
+/* ==================================================
+   BACK TO TOP
+================================================== */
+
+.top-button {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        var(--dark-green);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.2);
+}
+
+
+/* ==================================================
+   RESPONSIVE TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .top-grid {
+
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+
+    .leader-section {
+
+        grid-column:
+            span 2;
+
+        min-height: 550px;
+    }
+
+
+    .members-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .bottom-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .closing-section {
+
+        grid-column:
+            span 2;
+    }
+
+}
+
+
+/* ==================================================
+   RESPONSIVE MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .magazine-container {
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 5px;
+
+        border: none;
+    }
+
+
+    .top-grid,
+    .bottom-grid,
+    .members-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .leader-section,
+    .closing-section {
+
+        grid-column:
+            auto;
+    }
+
+
+    .leader-section {
+
+        padding-right: 20px;
+
+        min-height: 680px;
+    }
+
+
+    .leader-section h2 {
+
+        margin-right: 0;
+    }
+
+
+    .leader-section > p {
+
+        text-align: center;
+    }
+
+
+    .leader-image {
+
+        width: 60%;
+
+        height: 42%;
+    }
+
+
+    .quote-box {
+
+        bottom: 205px;
+    }
+
+
+    .member-card > img {
+
+        height: 260px;
+    }
+
+
+    .magazine-card {
+
+        min-height: 620px;
+    }
+
+
+    .bottom-photo,
+    .journey-section,
+    .closing-section {
+
+        min-height: 480px;
+    }
+
+
+    .footer-items {
+
+        flex-direction: column;
+    }
+
+
+    .footer-items div {
+
+        width: 90%;
+
+        text-align: center;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(
+                185,
+                139,
+                58,
+                .5
+            );
+
+        padding: 6px;
+    }
+
+}
+
+
+/* ==================================================
+   PRINT
+================================================== */
+
+@media print {
+
+    @page {
+
+        size: A4;
+
+        margin: 5mm;
+    }
+
+
+    body {
+
+        background: white;
+    }
+
+
+    .magazine-container {
+
+        width: 100%;
+
+        margin: 0;
+
+        border: none;
+
+        box-shadow: none;
+    }
+
+
+    .top-button {
+
+        display: none !important;
+    }
+
+
+    .magazine-card,
+    .member-card {
+
+        break-inside: avoid;
+    }
+
+}
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 5px;
+}
+/* =========================================
+   OUR LEADER SECTION
+========================================= */
+
+.leader-section {
+    min-height: 650px;
+    padding: 25px 30px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Heading */
+
+.leader-section h2 {
+    position: relative;
+    z-index: 10;
+
+    margin: 5px 0 3px;
+
+    color: var(--green);
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size: 2rem;
+}
+
+
+/* Decorative divider */
+
+.leader-divider {
+    position: relative;
+    z-index: 10;
+
+    color: var(--gold);
+
+    font-size: 14px;
+
+    margin: 3px 0 12px;
+
+    letter-spacing: 5px;
+}
+
+
+/* Leader name */
+
+.leader-name {
+    position: relative;
+    z-index: 10;
+
+    width: 80%;
+
+    margin: 0 auto;
+
+    padding: 8px 12px;
+
+    background: var(--dark-green);
+
+    border: 2px solid #bd8b2d;
+
+    color: #e4bb5d;
+
+    font-size: 1.05rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.12);
+}
+
+
+/* Script heading */
+
+.leader-section .script-title {
+    position: relative;
+    z-index: 10;
+
+    color: #1d302a;
+
+    font-family:
+        "Parisienne",
+        cursive;
+
+    font-size: 1.8rem;
+
+    margin: 12px 0 8px;
+}
+
+
+/* Leader paragraph */
+
+.leader-text {
+    position: relative;
+    z-index: 10;
+
+    max-width: 360px;
+
+    margin: 0 auto;
+
+    color: #18251f;
+
+    font-size: 1rem;
+
+    line-height: 1.55;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.leader-quote {
+    position: absolute;
+
+    z-index: 20;
+
+    left: 25px;
+
+    bottom: 175px;
+
+    width: 180px;
+
+    padding: 8px 12px;
+
+    background:
+        rgba(255, 250, 240, .94);
+
+    border: 1px solid var(--gold);
+
+    text-align: left;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.08);
+}
+
+
+.leader-quote span {
+    display: block;
+
+    color: var(--green);
+
+    font-family: Georgia, serif;
+
+    font-size: 3.5rem;
+
+    line-height: .5;
+
+    margin-bottom: 8px;
+}
+
+
+.leader-quote p {
+    margin: 0;
+
+    color: #1a2822;
+
+    font-size: .85rem;
+
+    line-height: 1.45;
+
+    text-align: left;
+}
+
+
+/* =========================================
+   LEADER IMAGE
+========================================= */
+
+.leader-image {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 48%;
+
+    object-fit: cover;
+
+    object-position: center top;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .leader-section {
+        min-height: 680px;
+
+        padding:
+            25px
+            20px
+            0;
+    }
+
+    .leader-name {
+        width: 90%;
+    }
+
+    .leader-text {
+        font-size: .95rem;
+
+        line-height: 1.5;
+    }
+
+    .leader-image {
+        height: 45%;
+    }
+
+    .leader-quote {
+        left: 15px;
+
+        bottom: 170px;
+
+        width: 165px;
+    }
+
+}
